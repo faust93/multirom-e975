@@ -42,6 +42,10 @@
 #include "log.h"
 #include "util.h"
 
+#ifdef HAVE_SELINUX
+static struct selabel_handle *sehandle;
+#endif
+
 /*
  * android_name_to_id - returns the integer uid/gid associated with the given
  * name, or -1U on error.

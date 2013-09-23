@@ -43,7 +43,7 @@
 #define NTFS_BIN "ntfs-3g"
 #define ADBD_BIN "adbd"
 #define INTERNAL_ROM_NAME "Internal"
-#define BOOT_BLK "/dev/block/mmcblk0p6"
+#define BOOT_BLK "/dev/block/mmcblk0p7"
 #define MAX_ROM_NAME_LEN 26
 #define LAYOUT_VERSION "/data/.layout_version"
 #define SECOND_BOOT_KMESG "MultiromSaysNextBootShouldBeSecondMagic108"
@@ -1680,10 +1680,10 @@ int multirom_replace_aliases_cmdline(char **s, struct rom_info *i, struct multir
                 if(!rom->partition)
                 {
                     struct stat info;
-                    if(stat("/dev/block/mmcblk0p10", &info) < 0)
-                        strcpy(itr_o, "/dev/mmcblk0p9");
+                    if(stat("/dev/block/mmcblk0p14", &info) < 0)
+                        strcpy(itr_o, "/dev/mmcblk013");
                     else
-                        strcpy(itr_o, "/dev/mmcblk0p10");
+                        strcpy(itr_o, "/dev/mmcblk0p14");
                 }
                 else
                     sprintf(itr_o, "UUID=%s", rom->partition->uuid);
